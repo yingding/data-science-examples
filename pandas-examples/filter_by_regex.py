@@ -2,12 +2,7 @@
 Reference:
 https://stackoverflow.com/questions/15325182/how-to-filter-rows-in-pandas-by-regex
 """
-
 import pandas as pd
-
-
- 
-
 
 def main():
     # create a data frame
