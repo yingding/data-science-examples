@@ -21,5 +21,17 @@ def main():
     filtered_df = df[~df["b"].str.contains("^f.*")]
     print(filtered_df)
 
+    # replace all string value with its first char
+    repl = lambda m: m.group(0)[:1]
+    rep_df = df["b"].str.replace('.*', repl, regex=True)
+    print(rep_df)
+
+    # replace all string value with int value
+    repl = lambda s: ord(s[:1]) - ord('a')
+    rep_df = df["b"].transform(repl)
+    print(rep_df)
+
+
+
 if __name__ == "__main__":
     main()
