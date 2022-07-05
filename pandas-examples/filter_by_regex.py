@@ -31,6 +31,12 @@ def main():
     rep_df = df["b"].transform(repl)
     print(rep_df)
 
+    # test series isin for int list
+    s = pd.Series([1, 2, 3, 4, 5, 6], name='animal')
+    idx = s.isin([1, 2])
+    print(idx)
+
+
 
 
 if __name__ == "__main__":
