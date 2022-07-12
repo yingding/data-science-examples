@@ -15,21 +15,15 @@ https://sparkbyexamples.com/pandas/pandas-combine-two-series-into-dataframe/
 
 import pandas as pd
 from pandas import Series
-from typing import Tuple, Dict
-
-def create_encoder_decoder_maps(s: Series) -> Tuple[Dict, Dict]:
-    origin: list = s.value_counts().index.to_list()
-    origin.sort(reverse=False) # use sort so that the 0 is at the very beginning
-    target: list = list(range(len(origin)))
-    _encoder_map = dict(zip(origin, target)) # this code loops multiple time, there is better way to do so.
-    _decoder_map = dict(zip(target, origin))
-    return _encoder_map, _decoder_map
-
-    
 
 def main():
     serie1: Series = Series([0, 1,  3,  4,  6,  7,  9, 10, 12, 13, 17, 20], name="serie1")
     serie2: Series = Series(list(range(len(serie1))), name = "serie2")
+    # set index the same
+    serie2.index = serie1.index
+
+    serie1.rename("s1", inplace=True)
+    serie2.name = "s2"
 
     df = pd.concat([serie1, serie2], axis=1) # concat on idx
     print(df)
