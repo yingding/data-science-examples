@@ -130,3 +130,9 @@ dmypy.json
 
 # no macosx .DS_Store files
 .DS_Store
+
+# no local analysis upload
+.analysis/
+.analysis/**
+.analysis/*
+
