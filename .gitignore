@@ -132,7 +132,9 @@ dmypy.json
 .DS_Store
 
 # no local analysis upload
-.analysis/
-.analysis/**
-.analysis/*
-
+# .analysis/
+# .analysis/**
+# .analysis/*
+analysis/
+analysis/*
+analysis/**
